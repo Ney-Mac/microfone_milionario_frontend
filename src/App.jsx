@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import './App.css'
-import {
-	Header,
-} from './components/index'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 import {
 	StartPage,
 	LoginPage,
 	RegisterPage,
-} from './pages/index'
-import RectBack from './assets/retangulo_background/rectangulo_background.svg'
+} from './pages/index';
 
 function App() {
-
 	return (
 		<div className="App">
-			<LoginPage />
+			<Router>
+				<Routes>
+					<Route path="/" element={<StartPage />} />
+					<Route path="/login" element={<LoginPage />} />
+					<Route path="/register" element={<RegisterPage />} />
+				</Routes>
+			</Router>
 		</div>
-	)
+	);
 }
 
-export default App
+export default App;

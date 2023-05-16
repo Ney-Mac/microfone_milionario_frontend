@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import './HeaderStyles.css'
+import './ButtonStyles.css'
 import Button from './Button'
 
 export default function Header() {
@@ -15,18 +17,19 @@ export default function Header() {
             </nav>
 
             <div className='coluna-botao'>
-                <Button
-                    variant="outlined"
-                    type='button'
+                <Link
+                    className='button outlined'
+                    to='/login'
                 >
                     Entrar
-                </Button>
-                <Button
-                    variant="contained"
-                    type='button'
+                </Link>
+                <Link
+                    className='button contained'
+                    to='/register'
                 >
                     Criar Conta
-                </Button>
+                </Link>
+
             </div>
 
         </header>
