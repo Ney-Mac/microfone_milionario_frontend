@@ -4,6 +4,7 @@ import {
 	StartPage,
 	LoginPage,
 	RegisterPage,
+	ForgotPassScreen,
 } from './pages/index';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 					<Route path="/" element={<StartPage />} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/register" element={<RegisterPage />} />
+					<Route path="/forgot-password" element={<ForgotPassScreen />} />
 				</Routes>
 			</Router>
 		</div>

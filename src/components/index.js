@@ -1,5 +1,8 @@
 export { default as Button } from './Button'
+export { default as ButtonLink } from './ButtonLink'
 export { default as Header } from './Header'
 export { default as Card } from './Card'
+export { default as CardRound } from './CardRound'
 export { default as TextInput } from './TextInput'
 export { default as Checkbox } from './Checkbox'
+export { default as Footer } from './Footer'

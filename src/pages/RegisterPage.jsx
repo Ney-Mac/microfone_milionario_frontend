@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './RegisterPageStyles.css'
 import { Button, TextInput } from '../components'
+import { Link } from 'react-router-dom'
 
 const RegisterPage = () => {
     const [name, setName] = useState();
@@ -59,9 +60,9 @@ const RegisterPage = () => {
                     <div className="row">
                         <p className="text" style={{ cursor: 'default' }}>
                             Já tem uma conta?
-                            <span className="link-text">
+                            <Link to='/login' className="link-text">
                                 Entrar
-                            </span>
+                            </Link>
                         </p>
                     </div>
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, TextInput, Checkbox } from "../components";
+import { Link } from "react-router-dom";
 import './LoginPageStyles.css';
 
 const LoginPage = () => {
@@ -10,8 +11,6 @@ const LoginPage = () => {
     const formSubmit = (event) => {
         event.preventDefault();
     }
-
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     return (
         <div className="login-container">
@@ -67,9 +66,9 @@ const LoginPage = () => {
                     <div className="row">
                         <p className="text" style={{ cursor: 'default' }}>
                             Não tem uma conta? 
-                            <span className="link-text">
+                            <Link to='/register' className="link-text">
                                 Criar conta
-                            </span>
+                            </Link>
                         </p>
                     </div>
 
