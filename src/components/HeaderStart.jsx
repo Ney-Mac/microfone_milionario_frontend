@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import './HeaderStyles.css'
+import './HeaderStartStyles.css'
 import Button from './Button'
 import ButtonLink from './ButtonLink'
 
-export default function Header() {
+export default function HeaderStart() {
 
     return (
         <header className='header'>
@@ -18,14 +18,16 @@ export default function Header() {
 
             <div className='coluna-botao'>
                 
-                <ButtonLink 
+                <ButtonLink
+                    type='button' 
                     variant='outlined'
                     to='/login'
                 >
                     Entrar
                 </ButtonLink>
 
-                <ButtonLink 
+                <ButtonLink
+                    type='button' 
                     variant='contained'
                     to='/register'
                 >

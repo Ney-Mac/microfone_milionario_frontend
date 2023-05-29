@@ -1,15 +1,38 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Button, TextInput, Checkbox } from "../components";
+import { passwordValidator } from '../helpers/passwordValidator';
+import { emailValidator } from "../helpers/emailValidator";
+import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import './LoginPageStyles.css';
 
 const LoginPage = () => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const { login } = useContext(AuthContext);
+    const [email, setEmail] = useState({ value: '', error: '' });
+    const [password, setPassword] = useState({ value: '', error: '' });
     const [stayLog, setStayLog] = useState(true);
 
     const formSubmit = (event) => {
         event.preventDefault();
+
+        const emailError = emailValidator(email.value);
+        const passwordError = passwordValidator(password.value);
+
+        if(emailError || passwordError) {
+            setEmail({ ...email, error: emailError });
+            setPassword({ ...password, error: passwordError });
+            return;
+        }
+
+        login(email.value, password.value, stayLog);
+    }
+
+    function onEmailChange(event) {
+        setEmail({ value: event.target.value, error: '' });
+    }
+
+    function onPasswordChage(event){
+        setPassword({ value: event.target.value, error: '' });
     }
 
     return (
@@ -25,6 +48,9 @@ const LoginPage = () => {
                         placeholder='Digite seu email'
                         name='user-email'
                         type='email'
+                        onChange={onEmailChange}
+                        errorText={email.error}
+                        error={!!email.error}
                     />
 
                     <TextInput
@@ -32,6 +58,9 @@ const LoginPage = () => {
                         placeholder='Digite sua senha'
                         name='user-password'
                         type='password'
+                        onChange={onPasswordChage}
+                        errorText={password.error}
+                        error={!!password.error}
                     />
 
                     <div className="row">
@@ -50,7 +79,7 @@ const LoginPage = () => {
                         </div>
 
                         <div className="coluna col-forgot">
-                            <p className="link-text">Esqueci minha senha</p>
+                            <Link to='/forgot-password' className="link-text">Esqueci minha senha</Link>
                         </div>
 
                     </div>

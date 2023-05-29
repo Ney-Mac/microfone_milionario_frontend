@@ -1,6 +1,6 @@
 import './StartPageStyles.css'
 import {
-    Header,
+    HeaderStart,
     Card,
     Button,
     ButtonLink,
@@ -23,7 +23,7 @@ const StartPage = () => {
                 className='background-img img-1'
             />
 
-            <Header />
+            <HeaderStart />
 
             <section className='section-destaque'>
                 <div className='destaque-container'>

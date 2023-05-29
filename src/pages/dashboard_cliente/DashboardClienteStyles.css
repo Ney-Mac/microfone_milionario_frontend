@@ -1,0 +1,27 @@
+.dashboard-cliente {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.carrossel-container {
+    background-color: blue;
+    width: 100%;
+    min-height: 500px;
+}
+
+.decorrer {
+    background-color: yellow;
+    width: 100%;
+    min-height: 500px;
+}
+
+.decorridos { 
+    background-color: pink;
+    width: 100%;
+    min-height: 500px;
+}

@@ -8,6 +8,29 @@
     text-decoration: none;
 }
 
+.link {
+    color: var(--black);
+    text-decoration: none;
+    font: var(--text-body-bold);
+    line-height: normal;
+    transition: all ease 700ms;
+}
+
+.link:hover {
+    color: var(--secondary-main);
+    border-color: var(--secondary-main);
+}
+
+.active-page {
+    color: var(--secondary-main) !important;
+    border-color: var(--secundary-main) !important;
+}
+
+.sublined {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 0;
+}
+
 .outlined {
     background-color: var(--white);
     color: var(--secondary-dark);
