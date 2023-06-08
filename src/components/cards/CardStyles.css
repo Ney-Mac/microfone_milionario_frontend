@@ -1,7 +1,7 @@
 .card {
     height: 390px;
     width: 360px;
-    background-color: var(--secondary-dark);
+    background-color: var(--primary-dark);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 }
 
 .card:hover {
-    box-shadow: 8px 8px 30px 8px var(--secondary-main);
+    box-shadow: 8px 8px 30px 8px var(--primary-main);
 }
 
 .card-img {
@@ -141,7 +141,7 @@
 .lg-card-content-main-data {
     width: 70%;
     height: 100%;
-    border: 2px solid var(--secondary-main);
+    border: 2px solid var(--primary-main);
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -156,7 +156,7 @@
 .black-line {
     grid-column: 1 / -1;
     height: 1px;
-    background-color: var(--secondary-main);
+    background-color: var(--primary-main);
     align-self: self-end;
 }
 

@@ -1,7 +1,7 @@
 .textInput {
     width: 100%;
     height: fit-content;
-    color: var(--secondary-main);
+    color: var(--primary-main);
     display: flex;
     flex-direction: column;
 }
@@ -34,7 +34,7 @@
     border: none;
     padding: 10px 0;
     flex: 1;
-    color: var(--secondary-main);
+    color: var(--primary-main);
     font: var(--text-body);
 }
 

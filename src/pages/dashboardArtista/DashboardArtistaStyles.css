@@ -55,7 +55,7 @@
 
 .my-numbers-title {
     color: var(--white);
-    background-color: var(--secondary-main);
+    background-color: var(--primary-main);
     width: 100%;
     height: fit-content;
     padding: 10px 0;
@@ -70,7 +70,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    border-bottom: 2px solid var(--secondary-main);
+    border-bottom: 2px solid var(--primary-main);
     padding: 10px 20px;
 }
 

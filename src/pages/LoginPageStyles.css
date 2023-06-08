@@ -33,7 +33,7 @@
 }
 
 .title {
-    color: var(--secondary-main);
+    color: var(--primary-main);
 }
 
 /*############### Remember Button #################*/
@@ -57,7 +57,7 @@
 }
 
 .link-text {
-    color: var(--secondary-main);
+    color: var(--primary-main);
     cursor: pointer;
     margin-left: 5px;
     transition: all ease 500ms;
@@ -71,7 +71,7 @@
 }
 
 .link-text:hover {
-    color: var(--secondary-dark);
+    color: var(--primary-dark);
     font-size: 1.1rem;
 }
 
