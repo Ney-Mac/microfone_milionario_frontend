@@ -1,3 +1,12 @@
+.background {
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
 .start-page {
     position: relative;
     width: 100%;

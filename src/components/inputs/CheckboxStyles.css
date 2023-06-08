@@ -1,0 +1,50 @@
+.check-container {
+    position: relative;
+    cursor: pointer;
+    padding-left: 35px;
+    height: 100%;
+}
+
+.check-container input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 2px solid var(--secondary-main);
+    border-radius: 50px;
+}
+
+.check-container:hover input~.check-marker {
+    background-color: var(--primary-dark);
+}
+
+.check-marker::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-container input:checked~.check-marker::after {
+    display: block;
+}
+
+.check-container .check-marker::after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--secondary-main);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

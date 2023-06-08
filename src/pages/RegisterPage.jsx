@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
 import { Button, TextInput } from '../components'
+import { telefoneValidator } from '../helpers/telefoneValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { confirmPassword } from '../helpers/confirmPassword'
 import { emailValidator } from '../helpers/emailValidator'
@@ -12,6 +13,7 @@ const RegisterPage = () => {
     const { register } = useContext(AuthContext);
     const [name, setName] = useState({ value: '', error: '' });
     const [email, setEmail] = useState({ value: '', error: '' });
+    const [telefone, setTelefone] = useState({ value: '', error: '' });
     const [password, setPassword] = useState({ value: '', error: '' });
     const [confirmPw, setConfirmPw] = useState({ value: '', error: '' });
 
@@ -20,12 +22,14 @@ const RegisterPage = () => {
 
         const nameError = nomeValidator(name.value);
         const emailError = emailValidator(email.value);
+        const telefoneError = telefoneValidator(telefone.value);
         const passwordError = passwordValidator(password.value);
         const confirmPasswordError = confirmPassword(confirmPw.value);
 
-        if(nameError || emailError || passwordError || confirmPasswordError){
+        if (nameError || emailError || passwordError || confirmPasswordError) {
             setName({ ...name, error: nameError });
             setEmail({ ...email, error: emailError });
+            setTelefone({ ...telefone, error: telefoneError });
             setPassword({ ...password, error: passwordError });
             setConfirmPw({ ...confirmPw, error: confirmPasswordError });
 
@@ -39,22 +43,6 @@ const RegisterPage = () => {
         setState({ value: event.target.value, error: '' });
     }
 
-    /*function onNameChange(event){
-        setName({ value: event.target.value, error: '' });
-    }
-
-    function onEmailChange(event){
-        setEmail({ value: event.target.value, error: '' });
-    }
-
-    function onPasswordChage(event){
-        setPassword({ value: event.target.value, error: '' });
-    }
-
-    function onConfirmPwChange(event){
-        setConfirmPw({ value: event.target.value, error: '' });
-    }*/
-
     return (
         <div className="register-container">
 
@@ -65,7 +53,8 @@ const RegisterPage = () => {
 
                     <TextInput
                         label='Nome'
-                        placeholder='Digite seu nome'
+                        placeholder='Digite seu nome completo'
+                        value={name.value}
                         name='user-name'
                         type='text'
                         onChange={event => { onValueChange(setName, event) }}
@@ -76,6 +65,7 @@ const RegisterPage = () => {
                     <TextInput
                         label='Email'
                         placeholder='Digite seu email'
+                        value={email.value}
                         name='user-email'
                         type='email'
                         onChange={event => { onValueChange(setEmail, event) }}
@@ -84,10 +74,22 @@ const RegisterPage = () => {
                     />
 
                     <TextInput
+                        label='Telefone'
+                        placeholder='Digite seu número de telefone Unitel'
+                        value={telefone.value}
+                        name='user-phone'
+                        type='text'
+                        onChange={event => { onValueChange(setTelefone, event) }}
+                        error={!!telefone.error}
+                        errorText={telefone.error}
+                    />
+
+                    <TextInput
                         label='Senha'
                         placeholder='Digite sua senha'
+                        value={password.value}
                         name='user-password'
-                        type='password'
+                        isPassword={true}
                         onChange={event => { onValueChange(setPassword, event) }}
                         error={!!password.error}
                         errorText={password.error}
@@ -96,8 +98,9 @@ const RegisterPage = () => {
                     <TextInput
                         label='Confirmar Senha'
                         placeholder='Repita a senha'
+                        value={confirmPw.value}
                         name='user-confirm-password'
-                        type='password'
+                        isPassword={true}
                         onChange={event => { onValueChange(setConfirmPw, event) }}
                         error={!!confirmPw.error}
                         errorText={confirmPw.error}

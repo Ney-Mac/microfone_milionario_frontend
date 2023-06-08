@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://mic-milionario.onrender.com/mic-milionario-api​/v1​/';

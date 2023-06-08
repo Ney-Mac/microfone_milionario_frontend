@@ -8,8 +8,8 @@ import './LoginPageStyles.css';
 
 const LoginPage = () => {
     const { login } = useContext(AuthContext);
-    const [email, setEmail] = useState({ value: '', error: '' });
-    const [password, setPassword] = useState({ value: '', error: '' });
+    const [email, setEmail] = useState({ value: 'NeyCarioM@gmail.com', error: '' });
+    const [password, setPassword] = useState({ value: '12345678', error: '' });
     const [stayLog, setStayLog] = useState(true);
 
     const formSubmit = (event) => {
@@ -18,7 +18,7 @@ const LoginPage = () => {
         const emailError = emailValidator(email.value);
         const passwordError = passwordValidator(password.value);
 
-        if(emailError || passwordError) {
+        if (emailError || passwordError) {
             setEmail({ ...email, error: emailError });
             setPassword({ ...password, error: passwordError });
             return;
@@ -27,12 +27,8 @@ const LoginPage = () => {
         login(email.value, password.value, stayLog);
     }
 
-    function onEmailChange(event) {
-        setEmail({ value: event.target.value, error: '' });
-    }
-
-    function onPasswordChage(event){
-        setPassword({ value: event.target.value, error: '' });
+    function handleStateValue(setState, event) {
+        setState({ value: event.target.value, error: '' });
     }
 
     return (
@@ -46,9 +42,10 @@ const LoginPage = () => {
                     <TextInput
                         label='Email'
                         placeholder='Digite seu email'
+                        value={email.value}
                         name='user-email'
                         type='email'
-                        onChange={onEmailChange}
+                        onChange={(event) => { handleStateValue(setEmail, event) }}
                         errorText={email.error}
                         error={!!email.error}
                     />
@@ -56,9 +53,10 @@ const LoginPage = () => {
                     <TextInput
                         label='Senha'
                         placeholder='Digite sua senha'
+                        value={password.value}
                         name='user-password'
-                        type='password'
-                        onChange={onPasswordChage}
+                        isPassword={true}
+                        onChange={(event) => { handleStateValue(setPassword, event) }}
                         errorText={password.error}
                         error={!!password.error}
                     />
@@ -94,7 +92,7 @@ const LoginPage = () => {
 
                     <div className="row">
                         <p className="text" style={{ cursor: 'default' }}>
-                            Não tem uma conta? 
+                            Não tem uma conta?
                             <Link to='/register' className="link-text">
                                 Criar conta
                             </Link>

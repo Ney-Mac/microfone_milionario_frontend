@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #c5b898;
+  background-color: #ffffffdb;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,19 +22,22 @@
   --secondary-dark: #b58f24;
   --brown-main: #44360e;
   --brown-dark: #2d2409;
+
   --gradient-main: linear-gradient(0deg, #b58f24 0%, #a87f13 0.01%, #b58f24 52.76%, #b58f24 100%);
   --gradient-border: linear-gradient(to right, #B58F24, rgba(181, 143, 36, 58%), rgba(181, 143, 36, 28%));  
-  --text-body: 400 1rem/3rem Montserrat;
+  
+  --text-body: 400 1rem Montserrat;
   --text-lead: 400 1.7280000448226929rem/4rem Fredoka One;
   --text-small: 400 0.8330000042915344rem/4rem Montserrat;
   --text-smallest: 400 0.6940000057220459rem/4rem Montserrat;
-  --text-body-bold: 700 1rem/4rem Montserrat;
-  --headers-h1: 400 2.9860000610351562rem/4rem Fredoka One;
-  --headers-h2: 400 2.48799991607666rem/4rem Fredoka One;
-  --headers-h3: 400 2.0739998817443848rem/4rem Fredoka One;
-  --headers-h4: 400 1.7280000448226929rem/4rem Fredoka One;
-  --headers-h5: 400 1.440000057220459rem/4rem Fredoka One;
-  --headers-h6: 400 1.2000000476837158rem/4rem Fredoka One;
+  --text-body-bold: 700 1rem Montserrat;
+  
+  --headers-h1: 400 2.9860000610351562rem Fredoka One;
+  --headers-h2: 400 2.48799991607666rem Fredoka One;
+  --headers-h3: 400 2.0739998817443848rem Fredoka One;
+  --headers-h4: 400 1.7280000448226929rem Fredoka One;
+  --headers-h5: 400 1.440000057220459rem Fredoka One;
+  --headers-h6: 400 1.2000000476837158rem Fredoka One;
 }
 
 * {

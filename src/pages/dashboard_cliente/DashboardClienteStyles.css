@@ -5,23 +5,45 @@
     background-color: #fff;
     display: flex;
     flex-flow: column nowrap;
-    gap: 10px;
+    padding-bottom: 20px;
 }
 
 .carrossel-container {
-    background-color: blue;
     width: 100%;
-    min-height: 500px;
+    min-height: 300px;
+    height: fit-content;
 }
 
-.decorrer {
-    background-color: yellow;
+.container-concursos {
     width: 100%;
     min-height: 500px;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
 }
 
-.decorridos { 
-    background-color: pink;
+.row-container-cards {
     width: 100%;
-    min-height: 500px;
+    height: fit-content;
+    max-width: 1280px;
+    display: flex;
+    padding: 0 10px;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.player {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

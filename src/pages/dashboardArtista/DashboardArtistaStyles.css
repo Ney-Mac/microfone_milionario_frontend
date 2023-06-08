@@ -1,0 +1,81 @@
+.dsb-artista {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+    color: var(--black);
+}
+
+
+/*################ Header ####################*/
+.dsh-header {
+    grid-column: 1 / -1;
+}
+
+/*################ Main Content ####################*/
+.main-content {
+    grid-column: 1 / 10;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 30px;
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+
+.main-content h3 {
+    text-align: start;
+}
+
+/*################ Right Content ####################*/
+.right-col {
+    grid-column: 10 / -1;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-img-dsh-art {
+    height: 30%;
+    width: 100%;
+}
+
+.container-img-dsh-art img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container-my-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.my-numbers-title {
+    color: var(--white);
+    background-color: var(--secondary-main);
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+}
+
+.bolder {
+    font: var(--text-body-bold);
+}
+
+.row-my-numbers {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--secondary-main);
+    padding: 10px 20px;
+}
+
+.btn-my-numbers {
+    width: 100%;
+    padding: 10px 20px;
+    height: fit-content;
+}
