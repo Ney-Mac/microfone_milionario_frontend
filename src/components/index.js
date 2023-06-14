@@ -10,6 +10,7 @@ export { default as LongCard } from './cards/LongCard'
 
 export { default as TextInput } from './inputs/TextInput'
 export { default as Checkbox } from './inputs/Checkbox'
+export { default as Select } from './inputs/Select'
 
 export { default as Carousel } from './Carousel'
 export { default as AudioPlayer } from './AudioPlayer'

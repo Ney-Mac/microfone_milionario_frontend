@@ -1,16 +1,23 @@
-import { useState, useContext } from "react";
-import { Button, TextInput, Checkbox } from "../components";
-import { passwordValidator } from '../helpers/passwordValidator';
-import { emailValidator } from "../helpers/emailValidator";
-import { AuthContext } from "../context/AuthContext";
+import { useState, useContext, useEffect } from "react";
+import { Button, TextInput, Checkbox } from "../../../components";
+import { passwordValidator } from '../../../helpers/passwordValidator';
+import { emailValidator } from "../../../helpers/emailValidator";
+import { AuthContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
 import './LoginPageStyles.css';
 
 const LoginPage = () => {
-    const { login } = useContext(AuthContext);
-    const [email, setEmail] = useState({ value: 'NeyCarioM@gmail.com', error: '' });
-    const [password, setPassword] = useState({ value: '12345678', error: '' });
+    const { login, message } = useContext(AuthContext);
+    const [email, setEmail] = useState({ value: 'NeyTeste@gmail.com', error: '' });
+    const [password, setPassword] = useState({ value: '0000000', error: '' });
     const [stayLog, setStayLog] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
+
+    useEffect(() => {
+        if (message.type === 'login error') {
+            setShowMessage(true);
+        }
+    }, [message]);
 
     const formSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +31,7 @@ const LoginPage = () => {
             return;
         }
 
-        login(email.value, password.value, stayLog);
+        login((email.value).toLowerCase(), password.value, stayLog);
     }
 
     function handleStateValue(setState, event) {
@@ -38,6 +45,8 @@ const LoginPage = () => {
 
                 <form className="login-form">
                     <h1 className="title">Login</h1>
+
+                    {showMessage && message.value}
 
                     <TextInput
                         label='Email'

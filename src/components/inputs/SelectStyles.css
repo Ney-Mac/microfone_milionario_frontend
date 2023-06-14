@@ -1,12 +1,9 @@
-.textInput {
-    width: 100%;
+.select-continer {
     height: fit-content;
-    color: var(--primary-main);
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 }
 
-.label {
+.label-prefix-number {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -14,9 +11,10 @@
     align-items: flex-end;
     padding-bottom: 10px;
     font: var(--text-body-bold);
+    color: var(--primary-main);
 }
 
-.input-box {
+.select-prefix-number {
     width: 100%;
     height: fit-content;
     border: 2px solid transparent;
@@ -27,34 +25,19 @@
     justify-content: center;
     align-items: center;
     padding: 0 5px;
+    background-color: transparent;
+    padding: 10px 0;
+    position: relative;
+    font: var(--text-body-bold);
+    color: var(--primary-main);
 }
 
-.input {
+.select-prefix-number select {
     background-color: transparent;
     border: none;
-    padding: 10px 0;
-    flex: 1;
-    color: var(--primary-main);
-    font: var(--text-body);
-}
-
-.input:focus {
-    outline: none;
-}
-
-.icon-button {
-    cursor: pointer;
-}
-
-.error-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2px 0;
-}
-
-.error-text {
-    color: #dc242c;
+    height: 100%;
 }

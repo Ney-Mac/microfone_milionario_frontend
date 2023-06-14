@@ -56,7 +56,6 @@
 .card-round {
     width: 256px;
     height: 256px;
-    background-color: red;
     border-radius: 50%;
     position: relative;
     margin: 10px;
@@ -71,7 +70,12 @@
     right: -8px;
     border-radius: 50%;
     background-image: var(--gradient-border);
-    z-index: -1;
+}
+
+.card-round-content {
+    position: relative;
+    z-index: 1;
+    top: 0;
 }
 
 .img-round {

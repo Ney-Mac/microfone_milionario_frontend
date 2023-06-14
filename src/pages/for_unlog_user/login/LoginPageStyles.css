@@ -15,7 +15,7 @@
 }
 
 .img-container {
-    background-image: url('../assets/login/login_img.png');
+    background-image: url('../../../assets/login/login_img.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
