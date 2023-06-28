@@ -3,15 +3,17 @@ import { Button, TextInput, Checkbox } from "../../../components";
 import { passwordValidator } from '../../../helpers/passwordValidator';
 import { emailValidator } from "../../../helpers/emailValidator";
 import { AuthContext } from "../../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './LoginPageStyles.css';
 
 const LoginPage = () => {
-    const { login, message } = useContext(AuthContext);
+    const { login, message, userInfo } = useContext(AuthContext);
     const [email, setEmail] = useState({ value: 'NeyTeste@gmail.com', error: '' });
     const [password, setPassword] = useState({ value: '0000000', error: '' });
     const [stayLog, setStayLog] = useState(true);
     const [showMessage, setShowMessage] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (message.type === 'login error') {
@@ -31,7 +33,11 @@ const LoginPage = () => {
             return;
         }
 
-        login((email.value).toLowerCase(), password.value, stayLog);
+        login((email.value).toLowerCase(), password.value, stayLog, redirectTo);
+    }
+
+    function redirectTo(link) {
+        navigate(link);
     }
 
     function handleStateValue(setState, event) {

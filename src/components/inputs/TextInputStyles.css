@@ -14,19 +14,27 @@
     align-items: flex-end;
     padding-bottom: 10px;
     font: var(--text-body-bold);
+    color: black;
 }
 
 .input-box {
     width: 100%;
     height: fit-content;
-    border: 2px solid transparent;
-    border-image-source: var(--gradient-border);
-    border-image-slice: 2;
-    border-image-width: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 5px;
+
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 1px;
+}
+
+.on-focus {
+    border: 2px solid transparent !important;
+    border-image-source: var(--gradient-border) !important;
+    border-image-slice: 2 !important;
+    border-image-width: 1 !important;
+    margin: 0 !important;
 }
 
 .input {
@@ -34,7 +42,8 @@
     border: none;
     padding: 10px 0;
     flex: 1;
-    color: var(--primary-main);
+    /*color: var(--primary-main);*/
+    color: #424242;
     font: var(--text-body);
 }
 

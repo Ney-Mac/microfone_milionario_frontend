@@ -24,10 +24,11 @@ export default function Card({ src, alt = 'card image' }) {
                     <p>Texto Left</p>
                     <p>Texto right</p>
                 </div>
-                
+
                 <div className="row-button">
                     <ButtonLink
-                        variant='outlined'
+                        type='link'
+                        variant='sublined'
                         to='#'
                     >
                         Ver Concurso

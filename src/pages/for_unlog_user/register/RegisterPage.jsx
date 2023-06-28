@@ -18,7 +18,7 @@ const RegisterPage = () => {
     const [password, setPassword] = useState({ value: '0000000', error: '' });
     const [confirmPw, setConfirmPw] = useState({ value: '0000000', error: '' });
     const [showMessage, setShowMessage] = useState(false);
-    const [prefixNumber, setPrefixNumber] = useState('+244');
+    const [prefixNumber, setPrefixNumber] = useState({ value: '+244', error: '' });
     const [userBirth, setUserBirth] = useState({ value: '2000-08-15', error: '' });
     const [morada, setMorada] = useState({ value: 'Talatona', error: '' });
 
@@ -42,8 +42,9 @@ const RegisterPage = () => {
         const passwordError = passwordValidator(password.value);
         const confirmPasswordError = confirmPassword(password.value, confirmPw.value);
         const moradaError = (!!morada.value) ? '' : 'Insira sua morada'
+        const prefixError = (!!prefixNumber.value) ? '' : 'Selecione o prefixo'
 
-        if (nameError || sobrenomeError || emailError || passwordError || confirmPasswordError || moradaError) {
+        if (prefixError || nameError || sobrenomeError || emailError || passwordError || confirmPasswordError || moradaError) {
             setName({ ...name, error: nameError });
             setSobrenome({ ...sobrenome, error: sobrenomeError });
             setEmail({ ...email, error: emailError });
@@ -51,23 +52,27 @@ const RegisterPage = () => {
             setPassword({ ...password, error: passwordError });
             setConfirmPw({ ...confirmPw, error: confirmPasswordError });
             setMorada({ ...morada, error: moradaError });
+            setPrefixNumber({ ...prefixNumber, error: prefixError });
 
             return;
         }
 
         register({
-            nomeCompleto: name.value + sobrenome.value, 
+            nomeCompleto: `${name.value} ${sobrenome.value}`, 
             email: (email.value).toLowerCase(), 
             telefone: telefone.value, 
             password: password.value,
             dataNascimento: userBirth.value,
             morada: morada.value,
-            roleName: 'USER'
+            roleName: 'USER',
+            indicativoTelefone: prefixNumber.value
         });
     }
 
     function onValueChange(setState, event) {
         setState({ value: event.target.value, error: '' });
+        console.log(event.target)
+        console.log(event.target.value)
     }
 
     return (
@@ -126,12 +131,14 @@ const RegisterPage = () => {
                             <Select
                                 label='Prefixo'
                                 placeholder='Ex: +244'
-                                currentValue={prefixNumber}
+                                currentValue={prefixNumber.value}
                                 name='user-phone'
+                                onChange={handlePrefixNumberValue}
+                                error={!!prefixNumber.error}
+                                errorText={prefixNumber.error}
                                 values={{
                                     value1: '+244',
                                 }}
-                                onChange={handlePrefixNumberValue}
                             />
                         </div>
                         <div className="row-phone-right-item">
@@ -148,16 +155,21 @@ const RegisterPage = () => {
                         </div>
                     </div>
 
-                    <div className='row-birth-date'>
-                        <label htmlFor='date' className='birth-label'>Data de nascimento</label>
-                        <input
-                            type="date"
-                            name="user-birthdate"
-                            onChange={(event) => {
-                                onValueChange(setUserBirth, event);
-                            }}
-                        />
-                    </div>
+                    <TextInput 
+                        label='Data de nascimento'
+                        placeholder=''
+                        value={userBirth.value}
+                        name='user-birthdate'
+                        type='date'
+                        onChange={event => { onValueChange(setUserBirth, event) }}
+                        error={!!userBirth.error}
+                        errorText={userBirth.error}
+                        onClick={(event) => {
+                            const inputDate = event.target;
+                            console.log(inputDate);
+                        }}
+                        onKeyPress={(event) => { event.preventDefault() }}
+                    />
 
                     <TextInput
                         label='Morada'

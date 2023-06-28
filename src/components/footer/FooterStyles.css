@@ -6,6 +6,7 @@
     padding: 10px;
     margin-top: 50px;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .footer::after {
@@ -31,7 +32,7 @@
 
 .footer-col p {
     font: var(--text-lead);
-    color: var(--secondary-main);
+    color: var(--primay-main);
 }
 
 .icon-button{

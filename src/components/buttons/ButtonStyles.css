@@ -19,8 +19,8 @@
 }
 
 .link:hover {
-    color: var(--primary-main);
-    border-color: var(--primary-main);
+    color: rgba(red, 0, 0, 0.5);
+    border-color: rgba(red, 0, 0, 0.5);
 }
 
 .active-page {
@@ -34,9 +34,9 @@
 }
 
 .outlined {
-    background-color: var(--white);
-    color: var(--primary-dark);
-    border: var(--primary-dark) solid 2px;
+    background-color: transparent;
+    color: var(--primary-main);
+    border: var(--primary-main) solid 2px;
     transition: all ease 0.5s;
 }
 

@@ -1,9 +1,12 @@
 import { useRef } from 'react'
-import { CardRound, Carousel } from '../../../components'
-import { Link } from 'react-router-dom'
-import { ButtonLink } from '../../../components'
+import {
+    ButtonLink,
+    CardRound,
+    Header,
+    RowAudioPlayer,
+    Footer,
+} from '../../../components'
 import Slider from 'react-slick'
-import logoImg from '../../../assets/logo/mm_logo.jpeg'
 import imgContent from '../../../assets/carousel/carrossel2.png'
 import './StartPageStyles.css'
 
@@ -20,6 +23,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { BsChevronLeft } from 'react-icons/bs'
 import { BsChevronRight } from 'react-icons/bs'
+
+import music from '../../../assets/audio/cannon_in_d.mp3'
 
 const StartPage = () => {
     const settings = {
@@ -43,37 +48,9 @@ const StartPage = () => {
     return (
         <div className="start-page-container">
 
-            <header className="start-header">
-                <div className="start-header-img-container">
-                    <img src={logoImg} alt="Logo MM" />
-                </div>
-
-                <nav className="start-navbar-container">
-                    <ul className="start-navbar">
-                        <li className="start-nav-item start-active-nav-item">
-                            <Link className="start-nav-item-link">
-                                Home
-                            </Link>
-                        </li>
-                        <li className="start-nav-item">
-                            <Link className="start-nav-item-link">
-                                Contact
-                            </Link>
-                        </li>
-                        <li className="start-nav-item">
-                            <Link className="start-nav-item-link">
-                                About us
-                            </Link>
-                        </li>
-                        <li className="start-nav-item">
-                            <Link className="start-nav-item-link">
-                                Reading
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-
+            <Header
+                onlyCompact={false}
+            />
 
             <section className="start-carousel">
                 <div className="slider-container">
@@ -115,16 +92,16 @@ const StartPage = () => {
                 </div>
 
                 <div className="start-carousel-card-container">
-                    <div className="start-carousel-card"></div>
-                    <div className="start-carousel-card"></div>
-                    <div className="start-carousel-card"></div>
-                    <div className="start-carousel-card"></div>
+                    <div className="start-carousel-card shine-animation"></div>
+                    <div className="start-carousel-card shine-animation"></div>
+                    <div className="start-carousel-card shine-animation"></div>
+                    <div className="start-carousel-card shine-animation"></div>
                 </div>
             </section>
 
             <main className="start-main">
 
-                <section className="section-container">
+                <section className="sectio id='mais-votados'n-container">
                     <h3 className="title-section">
                         <span>Mais Votados</span>
                     </h3>
@@ -176,6 +153,20 @@ const StartPage = () => {
                         </div>
                     </div>
 
+                    <div className="short-card-container">
+                        <div className="short-card shine-animation">
+
+                        </div>
+
+                        <div className="short-card shine-animation">
+
+                        </div>
+
+                        <div className="short-card shine-animation">
+
+                        </div>
+                    </div>
+
                 </section>
 
                 <section className="section-container">
@@ -197,6 +188,17 @@ const StartPage = () => {
                     </Slider>
 
                 </section>
+
+                {/*<div className="section-container music-sugestion">
+                    
+                    
+                    <div className="col-music">
+                        <RowAudioPlayer imgSrc={img1} audioSrc={music} />
+                        <RowAudioPlayer imgSrc={img1} audioSrc={music} />
+                        <RowAudioPlayer imgSrc={img1} audioSrc={music} />
+                        <RowAudioPlayer imgSrc={img1} audioSrc={music} />
+                    </div>
+                </div>*/}
 
                 <section className="content-img">
                     <img src={imgContent} alt="Image Content" className="img-content" />
@@ -232,9 +234,7 @@ const StartPage = () => {
 
             </main>
 
-            <footer>
-                
-            </footer>
+            <Footer />
 
         </div>
     )

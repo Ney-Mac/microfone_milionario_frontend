@@ -4,16 +4,19 @@ import './TextInputStyles.css'
 
 export default function TextInput({ label, placeholder, name, error, value, errorText, isPassword, type, ...props }) {
     const [showPassword, setShowPassword] = useState(false);
+    const [isSlected, setIsSelected] = useState(false);
 
     return (
         <div className='textInput'>
             <label htmlFor={name} className="label">{label}</label>
-            <div className="input-box">
+            <div className={`input-box ${(isSlected)? 'on-focus' : ''}`}>
                 <input
                     placeholder={placeholder}
                     className="input"
                     name={name}
                     value={value}
+                    onFocus={() => { setIsSelected(true) }}
+                    onBlur={() => { setIsSelected(false) }}
                     type={(!isPassword)? type : (showPassword)? 'text' : 'password' }
                     {...props}
                 />

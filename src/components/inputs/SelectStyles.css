@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.label-prefix-number {
+.select-label {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -11,28 +11,32 @@
     align-items: flex-end;
     padding-bottom: 10px;
     font: var(--text-body-bold);
-    color: var(--primary-main);
+    color: black;
 }
 
-.select-prefix-number {
+.select {
     width: 100%;
     height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    position: relative;
+    font: var(--text-body-bold);
+    color: #424242;
+
+    /*
     border: 2px solid transparent;
     border-image-source: var(--gradient-border);
     border-image-slice: 2;
     border-image-width: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px;
-    background-color: transparent;
-    padding: 10px 0;
-    position: relative;
-    font: var(--text-body-bold);
     color: var(--primary-main);
+    */
 }
 
-.select-prefix-number select {
+.select select {
     background-color: transparent;
     border: none;
     position: absolute;
@@ -41,3 +45,7 @@
     width: 100%;
     height: 100%;
 }
+
+/*.select-option {
+    
+}*/
